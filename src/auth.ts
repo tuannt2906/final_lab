@@ -1,3 +1,4 @@
+import { InvalidEmailPasswordError } from "@/utils/errors";
 import NextAuth from "next-auth";
 import Credentials from "next-auth/providers/credentials";
 
@@ -12,17 +13,22 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
       },
       authorize: async (credentials) => {
         let user = null
- 
-        // logic to salt and hash password
-        const pwHash = saltAndHashPassword(credentials.password)
- 
+
         // logic to verify if the user exists
-        user = await getUserFromDb(credentials.email, pwHash)
+        // call backend
+        user = {
+          _id: "123",
+          username: "123",
+          email: "123",
+          isVerify: "123",
+          type: "123",
+          role: "123",
+        }
  
         if (!user) {
           // No user found, so this is their first attempt to login
           // meaning this is also the place you could do registration
-          throw new Error("User not found.")
+          throw new InvalidEmailPasswordError();
         }
  
         // return user object with their profile data
@@ -30,4 +36,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
       },
     }),
   ],
+  pages: {
+    signIn: "/auth/login",
+  },
 });
