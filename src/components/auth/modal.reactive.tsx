@@ -13,7 +13,7 @@ const ModalReactive = (props: any) => {
 
   useEffect(()=>{
     if(userEmail) {
-      form.setFieldValue("email")
+      form.setFieldValue("email", userEmail)
     }
   }, [userEmail]);
 
