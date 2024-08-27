@@ -10,8 +10,6 @@ import { IUser } from "./types/next-auth";
 export const { handlers, signIn, signOut, auth } = NextAuth({
   providers: [
     Credentials({
-      // You can specify which fields should be submitted, by adding keys to the `credentials` object.
-      // e.g. domain, username, password, 2FA token, etc.
       credentials: {
         username: {},
         password: {},
@@ -48,7 +46,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
   callbacks: {
     jwt({ token, user }) {
       if (user) {
-        token.user = user as IUser;
+        token.user = (user as IUser);
       }
       return token;
     },
@@ -57,7 +55,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
       return session;
     },
     authorized: async ({auth}) => {
-      return !!auth
+      return !!auth;
     }
   },
 });
