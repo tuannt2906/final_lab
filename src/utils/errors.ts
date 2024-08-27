@@ -10,9 +10,9 @@ export class CustomAuthError extends AuthError {
 }
 
 export class InvalidEmailPasswordError extends AuthError {
-    static type = "Email/Password không hợp lệ!";
+    static type = "Email/Password is invalid!";
 }
 
 export class InactiveAccountError extends AuthError {
-    static type = "Tài khoản chưa được kích hoạt!";
+    static type = "Account is not actived yet!";
 }
