@@ -38,7 +38,7 @@ const Verify = (props: any) => {
                   border: "1px solid #ccc",
                   borderRadius: "5px"
               }}>
-                  <legend>Kích hoạt Tài Khoản</legend>
+                  <legend>Active Account</legend>
                   <Form
                       name="basic"
                       onFinish={onFinish}
@@ -55,7 +55,7 @@ const Verify = (props: any) => {
                       </Form.Item>
 
                       <div>
-                      Mã code đã được gửi đến email đăng kí, vui lòng kiểm tra email.
+                      Code has been sent to your email.
                       </div>
 
                       <Divider></Divider>
@@ -80,10 +80,10 @@ const Verify = (props: any) => {
                           </Button>
                       </Form.Item>
                   </Form>
-                  <Link href={"/"}><ArrowLeftOutlined /> Quay lại trang chủ</Link>
+                  <Link href={"/"}><ArrowLeftOutlined /> Back to Homepage</Link>
                   <Divider />
                   <div style={{ textAlign: "center" }}>
-                      Đã có tài khoản? <Link href={"/auth/login"}>Đăng nhập</Link>
+                      Have an account? <Link href={"/auth/login"}>Login</Link>
                   </div>
 
               </fieldset>

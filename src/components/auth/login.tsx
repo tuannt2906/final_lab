@@ -2,21 +2,21 @@
 import { Button, Col, Divider, Form, Input, notification, Row } from 'antd';
 import { ArrowLeftOutlined } from '@ant-design/icons';
 import Link from 'next/link';
-import { signIn } from 'next-auth/react';
 import { authenticate } from '@/utils/actions';
 import { useRouter } from 'next/navigation';
 import ModalReactive from './modal.reactive';
 import { useState } from 'react';
+import ModalChangePassword from './modal.change.password';
 
 const Login = () => {
     const router = useRouter()
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [userEmail, setUserEmail] = useState("");
+    const [changePassword, setChangePassword] = useState(false);
     const onFinish = async (values: any) => {
         const {username, password} = values;
         setUserEmail("");
         // Trigger sign in
-        //await signIn("credentials", { username, password, redirect: false });
         const res = await authenticate( username, password );
         if(res?.error) {
             if (res?.code === 2) {
@@ -44,7 +44,7 @@ const Login = () => {
                         border: "1px solid #ccc",
                         borderRadius: "5px"
                     }}>
-                        <legend>Đăng Nhập</legend>
+                        <legend>Login</legend>
                         <Form
                             name="basic"
                             onFinish={onFinish}
@@ -81,15 +81,22 @@ const Login = () => {
 
                             <Form.Item
                             >
-                                <Button type="primary" htmlType="submit">
-                                    Login
-                                </Button>
+                                <div style={{
+                                    display: "flex",
+                                    justifyContent: "space-between",
+                                    alignItems: "center"
+                                }}>
+                                    <Button type="primary" htmlType="submit">
+                                        Login
+                                    </Button>
+                                    <Button type='link' onClick={() => setChangePassword(true)}>Quên mật khẩu ?</Button>
+                                </div>
                             </Form.Item>
                         </Form>
-                        <Link href={"/"}><ArrowLeftOutlined /> Quay lại trang chủ</Link>
+                        <Link href={"/"}><ArrowLeftOutlined /> Back to Homepage</Link>
                         <Divider />
                         <div style={{ textAlign: "center" }}>
-                            Chưa có tài khoản? <Link href={"/auth/register"}>Đăng ký tại đây</Link>
+                            Not have account yet? <Link href={"/auth/register"}>Sign in here</Link>
                         </div>
                     </fieldset>
                 </Col>
@@ -98,6 +105,10 @@ const Login = () => {
             isModalOpen={isModalOpen}
             setIsModalOpen={setIsModalOpen}
             userEmail={userEmail}
+            />
+            <ModalChangePassword
+                isModalOpen={changePassword}
+                setIsModalOpen={setChangePassword}
             />
         </>
         

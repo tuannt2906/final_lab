@@ -37,7 +37,7 @@ const Register = () => {
                     border: "1px solid #ccc",
                     borderRadius: "5px"
                 }}>
-                    <legend>Đăng Ký Tài Khoản</legend>
+                    <legend>Sign in</legend>
                     <Form
                         name="basic"
                         onFinish={onFinish}
@@ -84,10 +84,10 @@ const Register = () => {
                             </Button>
                         </Form.Item>
                     </Form>
-                    <Link href={"/"}><ArrowLeftOutlined /> Quay lại trang chủ</Link>
+                    <Link href={"/"}><ArrowLeftOutlined /> Back to Homepage</Link>
                     <Divider />
                     <div style={{ textAlign: "center" }}>
-                        Đã có tài khoản? <Link href={"/auth/login"}>Đăng nhập</Link>
+                        Have an account? <Link href={"/auth/login"}>Login</Link>
                     </div>
 
                 </fieldset>
