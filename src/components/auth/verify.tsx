@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { sendRequest } from '@/utils/api';
 import { useRouter } from 'next/navigation';
 const Verify = (props: any) => {
-  const{id} = props;
+  const {id} = props;
   const router = useRouter()
 
   const onFinish = async (values: any) => {

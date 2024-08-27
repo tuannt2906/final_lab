@@ -102,9 +102,9 @@ const Login = () => {
                 </Col>
             </Row>
             <ModalReactive
-            isModalOpen={isModalOpen}
-            setIsModalOpen={setIsModalOpen}
-            userEmail={userEmail}
+                isModalOpen={isModalOpen}
+                setIsModalOpen={setIsModalOpen}
+                userEmail={userEmail}
             />
             <ModalChangePassword
                 isModalOpen={changePassword}

@@ -16,7 +16,9 @@ const ModalReactive = (props: any) => {
     if(userEmail) {
       form.setFieldValue("email", userEmail)
     }
-  }, [userEmail]);
+  }, [userEmail
+    , form
+  ]);
 
   if (!hasMounted) return <></>
   const onFinishStep0 = async (values: any) => {
