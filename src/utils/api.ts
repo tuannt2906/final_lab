@@ -29,6 +29,12 @@ export const sendRequest = async <T>(props: IRequest) => { //type
             return res.json() as T; //generic
         } else {
             return res.json().then(function (json) {
+
+                // 401 => unauthorize het token  
+                // 403 => ntn => permission => da so logout => bao loi
+                // 404 => trar veef loxi 
+                // 5xx => bao loi return 
+                // 400 => invalid field 
                 // to be able to access error status when you catch the error 
                 return {
                     statusCode: res.status,

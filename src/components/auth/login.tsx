@@ -52,12 +52,12 @@ const Login = () => {
                             layout='vertical'
                         >
                             <Form.Item
-                                label="Email"
+                                label="Username"
                                 name="username"
                                 rules={[
                                     {
                                         required: true,
-                                        message: 'Please input your email!',
+                                        message: 'Please input username!',
                                     },
                                 ]}
                             >
