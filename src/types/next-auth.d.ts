@@ -9,6 +9,11 @@ interface IUser {
     type: string;
     role: string;
 }
+interface IUsers {
+    _id: string;
+    username: string;
+    email: string;
+}
 declare module "next-auth/jwt" {
     /** Returned by the `jwt` callback and `getToken`, when using JWT sessions */
     interface JWT {

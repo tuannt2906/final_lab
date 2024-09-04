@@ -1,8 +1,8 @@
 'use client'
 
-import { CrownOutlined } from "@ant-design/icons"
-import { Result, Button } from "antd"
-import Link from 'next/link'
+import { CrownOutlined } from "@ant-design/icons";
+import { Result, Button } from "antd";
+import Link from 'next/link';
 
 const HomePage = () => {
     return (
@@ -26,7 +26,7 @@ const HomePage = () => {
                 }
             />
         </div>
-    )
-}
+    );
+};
 
 export default HomePage;

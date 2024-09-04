@@ -1,37 +1,39 @@
 'use client'
+import { IUsers } from "@/types/next-auth";
 import { Button, Table } from "antd"
+import { ColumnsType } from "antd/es/table";
 
+// interface IProps {
+//     users: IUsers[] | []
+// }
+// const UserTable = (props: IProps) => {
+//     const {users} = props;
 const UserTable = () => {
     const dataSource = [
         {
-            key: '1',
-            name: 'Mike',
-            age: 32,
-            address: '10 Downing Street',
+            _id: '1',
+            username: 'Tuan Nguyen',
+            email: 'nguyentuan123.yeah@gmail.com'
         },
         {
-            key: '2',
-            name: 'John',
-            age: 42,
-            address: '10 Downing Street',
-        },
+            _id: '2',
+            username: 'Bao Han',
+            email: 'baohantr02@gmail.com'
+        }
     ];
 
-    const columns = [
+    const columns : ColumnsType<IUsers> = [
         {
-            title: 'Name',
-            dataIndex: 'name',
-            key: 'name',
+            title: 'Id',
+            dataIndex: '_id',
         },
         {
-            title: 'Age',
-            dataIndex: 'age',
-            key: 'age',
+            title: 'Username',
+            dataIndex: 'username',
         },
         {
-            title: 'Address',
-            dataIndex: 'address',
-            key: 'address',
+            title: 'Email',
+            dataIndex: 'email',
         },
     ];
 
