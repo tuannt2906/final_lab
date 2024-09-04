@@ -24,7 +24,7 @@ export async function authenticate(username: string, password: string) {
       };
     } else {
       return {
-        error: "Internal Server Error",
+        error: "Wrong username/password",
         code: 0,
       };
     }

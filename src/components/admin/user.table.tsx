@@ -45,7 +45,6 @@ const UserTable = () => {
                 marginBottom: 20
             }}>
                 <span>Manager Users</span>
-                <Button>Create User</Button>
             </div>
             <Table
                 bordered
